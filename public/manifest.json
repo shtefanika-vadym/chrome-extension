@@ -14,14 +14,14 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "service_worker": "./background.js"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["./content.js"]
+      "js": ["content.js"]
     }
   ],
-  "permissions": [],
+  "permissions": ["tabs", "storage", "scripting", "activeTab", "webNavigation", "notifications"],
   "host_permissions": ["<all_urls>"]
 }
