@@ -12,7 +12,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "eslint-plugin-import-helpers"],
   "globals": {
     "chrome": "readonly"
   },
@@ -28,6 +28,25 @@
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
     "no-multiple-empty-lines": ["error", { "max": 2 }],
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react.*/",
+          "module",
+          "/app/",
+          "/assets/",
+          "/common/",
+          "/features/",
+          ["parent", "sibling", "index", "absolute"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
     "prettier/prettier": [
       "error",
       {

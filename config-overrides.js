@@ -1,6 +1,7 @@
-const path = require('path')
-const FileManagerPlugin = require('filemanager-webpack-plugin')
 const MultipleEntryPlugin = require('react-app-rewire-multiple-entry')
+
+const FileManagerPlugin = require('filemanager-webpack-plugin')
+const path = require('path')
 
 const multipleEntry = MultipleEntryPlugin([
   {
@@ -53,7 +54,7 @@ module.exports = {
 
     config.entry = {
       ...config.entry,
-      content: ['./src/content-script/content-script.ts'],
+      content: ['./src/content-script/content-script.tsx'],
       background: ['./src/background/background.ts', './live-reload.js'],
     }
 

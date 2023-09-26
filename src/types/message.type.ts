@@ -1,0 +1,8 @@
+export enum MESSAGE_CONSTANTS {
+  TOGGLE_EXTENSION = 'TOGGLE_EXTENSION',
+}
+
+export type MESSAGE = {
+  type: MESSAGE_CONSTANTS.TOGGLE_EXTENSION
+  data?: any
+}
