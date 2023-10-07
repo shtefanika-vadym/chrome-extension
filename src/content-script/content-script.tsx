@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom/client'
 
-import { Popup } from 'popup/components/popup'
-import { MESSAGE, MESSAGE_CONSTANTS } from 'types/message.type'
-import { Utils } from 'utils/utils'
+import { Popup } from 'popup/popup'
+
+import { Message } from 'common/const'
+import { Utils } from 'common/utils'
 
 import './content-script.css'
 
@@ -17,8 +18,8 @@ chrome.runtime.onMessage.addListener(async function (message): Promise<void> {
 })
 
 chrome.runtime.onMessage.addListener(
-  (message: MESSAGE, sender: chrome.runtime.MessageSender, sendResponse): void => {
-    if (message.type === MESSAGE_CONSTANTS.TOGGLE_EXTENSION) {
+  (message: { type: Message }, sender: chrome.runtime.MessageSender, sendResponse): void => {
+    if (message.type === Message.TOGGLE_EXTENSION) {
       toggleIsOpenPopup()
       sendResponse('Response from content script')
     }

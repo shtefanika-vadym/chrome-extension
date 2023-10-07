@@ -7,8 +7,8 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "7.1.24",
-    "antd": "4.23.4",
     "classnames": "2.3.2",
+    "compose-function": "^3.0.3",
     "ky": "0.31.3",
     "nanoid": "4.0.0",
     "openai": "^3.2.1",
@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@types/chrome": "0.0.197",
+    "@types/compose-function": "^0.0.31",
     "@types/node": "18.8.2",
     "@typescript-eslint/eslint-plugin": "5.39.0",
     "@typescript-eslint/parser": "5.39.0",

@@ -13,6 +13,11 @@ const handleClickOutsidePopup = (element: HTMLElement, onClickOutside: () => voi
   document.addEventListener('click', outsideClickListener)
 }
 
+const capitalizeFirstLetter = (str: string): string => {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 export const Utils = {
+  capitalizeFirstLetter,
   handleClickOutsidePopup,
 }
