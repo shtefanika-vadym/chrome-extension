@@ -1,5 +1,6 @@
 import compose from 'compose-function'
 
-import { withThemeProvider } from 'app/hoks/with-theme-provider'
+import { withI18 } from 'app/hoks/with-i18'
+import { withTheme } from 'app/hoks/with-theme'
 
-export const withProviders = compose(withThemeProvider)
+export const withProviders = compose(withTheme, withI18)
