@@ -5,8 +5,12 @@ import classNames from 'classnames'
 
 import { withProviders } from 'app/hoks'
 
-import { Button, Tabs } from 'common/components'
+import { Tabs } from 'common/components'
 import { useTheme } from 'common/hooks'
+
+import { History } from 'features/history'
+import { Result } from 'features/result'
+import { Settings } from 'features/settings'
 
 import styles from './popup-content.module.scss'
 
@@ -20,18 +24,15 @@ const PopupContent: FC<Props> = ({ onClose }) => {
     t,
     i18n: { changeLanguage, language },
   } = useTranslation()
-  console.log(language, t('result', {}))
   return (
     <div className={classNames(styles.parent, [theme])}>
       <Tabs
         items={[
-          { title: t('result'), component: <p>{t('result')}</p> },
-          { title: t('history'), component: <p>{t('history')}</p> },
-          { title: t('settings'), component: <p>{t('settings')}</p> },
+          { title: t('result'), component: <Result /> },
+          { title: t('history'), component: <History /> },
+          { title: t('settings'), component: <Settings /> },
         ]}
       />
-      <Button onClick={toggleTheme}>Switch Theme</Button>
-      <button onClick={onClose}>Close</button>
     </div>
   )
 }
